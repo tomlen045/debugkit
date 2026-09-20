@@ -1,6 +1,6 @@
 # debugkit
 
-简体中文 | [English](README_EN.md)
+[简体中文](README.md) | [English](README_EN.md) | [Gitee 镜像](https://gitee.com/tomlen/debugkit)
 
 调试现场的取证与结案纪律——为**任何能读文件并执行 shell 命令的编码代理**设计（OpenCode、Claude Code、Codex、Cursor、Hermes 等支持 SKILL.md 规范的框架均可）。自动识别意图，无需指定动作词。
 

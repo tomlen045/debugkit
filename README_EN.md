@@ -2,7 +2,7 @@
 
 **Debug forensics & closure discipline for coding agents** — for any agent that can read files and run shell commands (OpenCode, Claude Code, Codex, Cursor, Hermes, etc. — anything that speaks the SKILL.md convention). Intent is auto-detected; no magic words required.
 
-[简体中文](README.md) | English
+[简体中文](README.md) | English | [Gitee mirror](https://gitee.com/tomlen/debugkit)
 
 ## The problem it solves
 
