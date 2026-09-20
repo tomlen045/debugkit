@@ -12,6 +12,23 @@
 * The same bug comes back three times → **regression special procedure**: before touching code again, answer in writing — was the root cause wrong? was the fix reverted? was a condition missed?
 * Debugging context evaporates between sessions → **case files persist** in `.debugkit/`: evidence, ruled-out hypotheses, root-cause chains
 
+
+## 🎬 Demo
+
+A real bug, from report to closure (open → collect evidence → rule out → fix → verify → archive):
+
+![debugkit demo](screenshots/demo-loop.gif)
+
+| Report | Repro (rule #1: run before you report) |
+| --- | --- |
+| ![report](screenshots/debugkit-shot-01.png) | ![E1 repro](screenshots/debugkit-shot-03.png) |
+
+| Ruled out (evidence E2) | Closed + stats |
+| --- | --- |
+| ![E2](screenshots/debugkit-shot-04.png) | ![closed](screenshots/debugkit-shot-08.png) |
+
+Full video: [screenshots/demo.mp4](screenshots/demo.mp4).
+
 ## Quick start
 
 | You say | It does |

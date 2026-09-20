@@ -12,6 +12,23 @@
 * 同一个 bug 三次复发 → **复发特别程序**：先写复盘（根因错/被回退/条件漏了三选一），查清前冻结修复
 * 排查结论随会话蒸发 → **案卷跨会话留存**：证据、假设排除项、根因链全部落盘 `.debugkit/`
 
+
+## 🎬 实战演示
+
+一个真实 bug 的完整办案过程（报案 → 取证 → 排除 → 修复 → 验证 → 结案）：
+
+![debugkit 实战演示](screenshots/demo-loop.gif)
+
+| 报案 | 复现（铁律①：跑在报案前） |
+| --- | --- |
+| ![报案](screenshots/debugkit-shot-01.png) | ![E1 复现](screenshots/debugkit-shot-03.png) |
+
+| 排除（证据 E2） | 结案 + stats |
+| --- | --- |
+| ![E2 排除](screenshots/debugkit-shot-04.png) | ![结案](screenshots/debugkit-shot-08.png) |
+
+完整视频见 [screenshots/demo.mp4](screenshots/demo.mp4)。
+
 ## 快速使用
 
 | 你说 | 它做 |
