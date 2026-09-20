@@ -60,6 +60,8 @@ function loadCases(casesDir) {
     if (!fs.existsSync(layer)) continue;
     for (const d of fs.readdirSync(layer, { withFileTypes: true })) {
       if (!d.isDirectory()) continue;
+      // 容器目录不是案卷：archive/ 直接跳过；活层下隐藏目录/非案卷命名跳过
+      if (d.name === 'archive') continue;
       const p = path.join(layer, d.name, 'case.json');
       if (!fs.existsSync(p)) { if (layer === casesDir) CORRUPTED.push(`${d.name}（缺 case.json）`); continue; }
       let cj = null;
@@ -185,7 +187,11 @@ function stats() {
   let durations = [];
   for (const { case: c } of closed) {
     const t0 = Date.parse(c.createdAt), t1 = Date.parse(c.fix?.verify?.ts);
-    if (!Number.isNaN(t0) && !Number.isNaN(t1)) durations.push((t1 - t0) / 3600000);
+    // 只统计能解析出有效时长且不为负的案卷（无效时间戳不进均值）
+    if (!Number.isNaN(t0) && !Number.isNaN(t1)) {
+      const h = (t1 - t0) / 3600000;
+      if (h >= 0) durations.push(h);
+    }
   }
   const avgH = durations.length ? (durations.reduce((a, b) => a + b, 0) / durations.length) : null;
   console.log(`案卷总数 ${all.length}｜在办 ${openN}｜已结 ${closed.length}`);
